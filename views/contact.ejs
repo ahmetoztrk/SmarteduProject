@@ -1,6 +1,5 @@
-<%- include('partials/_header'); %>
-<%- include('partials/_navigation'); %>
-
+<%- include('partials/_header.ejs') %>
+<%- include('partials/_navigation.ejs') %>
 	
 	<div class="all-title-box">
 		<div class="container text-center">
@@ -16,7 +15,7 @@
             </div><!-- end title -->
 
             <div class="row">
-                <div class="col-xl-6 col-md-12 col-sm-12">
+                <div class="col-xl-12 col-md-12 col-sm-12">
                     <div class="contact_form">
                         <div id="message"></div>
                         <form id="contactform" class="" action="contact.php" name="contactform" method="post">
@@ -37,44 +36,15 @@
                                     <textarea class="form-control" name="comments" id="comments" rows="6" placeholder="Give us more details.."></textarea>
                                 </div>
                                 <div class="text-center pd">
-                                    <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Get a Quote</button>
+                                    <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">SEND</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div><!-- end col -->
-				<div class="col-xl-6 col-md-12 col-sm-12">
-					<div class="map-box">
-						<div id="custom-places" class="small-map"></div>
-					</div>
-				</div>
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
-	
-	<div class="parallax section dbcolor">
-        <div class="container">
-            <div class="row logos">
-                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                    <a href="#"><img src="images/logo_01.png" alt="" class="img-repsonsive"></a>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                    <a href="#"><img src="images/logo_02.png" alt="" class="img-repsonsive"></a>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                    <a href="#"><img src="images/logo_03.png" alt="" class="img-repsonsive"></a>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                    <a href="#"><img src="images/logo_04.png" alt="" class="img-repsonsive"></a>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                    <a href="#"><img src="images/logo_05.png" alt="" class="img-repsonsive"></a>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                    <a href="#"><img src="images/logo_06.png" alt="" class="img-repsonsive"></a>
-                </div>
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
 
-    <%- include('partials/_footer') %>   
+
+    <%- include('partials/_footer') %>
