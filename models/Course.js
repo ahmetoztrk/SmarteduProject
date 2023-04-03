@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+
 const Schema = mongoose.Schema;
 
 const courseSchema = new Schema({
@@ -21,6 +22,10 @@ const courseSchema = new Schema({
     type: String,
     unique: true,
   },
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category',
+  }
 });
 
 courseSchema.pre('save', function (next) {
