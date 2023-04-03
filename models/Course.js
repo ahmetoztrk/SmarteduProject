@@ -25,7 +25,7 @@ const courseSchema = new Schema({
   category: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Category',
-  }
+  },
 });
 
 courseSchema.pre('save', function (next) {

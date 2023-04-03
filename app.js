@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const pageRoute = require('./routes/pageRoute');
 const courseRoute = require('./routes/courseRoute');
 const categoryRoute = require('./routes/categoryRoute');
+const userRoute = require('./routes/userRoute');
 
 const app = express();
 
@@ -23,12 +24,13 @@ app.set('view engine', 'ejs');
 //Middlewares
 app.use(express.static('public'));
 app.use(express.json());
-app.use(express.urlencoded({extendend:true}))
+app.use(express.urlencoded({ extendend: true }));
 
 //Routes
 app.use('/', pageRoute);
 app.use('/courses', courseRoute);
 app.use('/category', categoryRoute);
+app.use('/user', userRoute);
 
 const port = 3000;
 
