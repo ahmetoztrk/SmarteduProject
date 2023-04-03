@@ -8,9 +8,7 @@ const app = express();
 
 //Connect DB
 mongoose
-  .connect('mongodb://localhost/smartedu-db', {
-    useNewUrlParser: true,
-  })
+  .connect('mongodb://localhost/smartedu-db')
   .then(() => {
     console.log('DB connected successfully');
   })
