@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extendend: true }));
 app.use('/', pageRoute);
 app.use('/courses', courseRoute);
 app.use('/category', categoryRoute);
-app.use('/user', userRoute);
+app.use('/users', userRoute);
 
 const port = 3000;
 
