@@ -10,10 +10,10 @@ exports.createCourse = async (req, res) => {
       category: req.body.category,
       user: req.session.userID,
     });
-    req.flash('success', `${course.name} has been created successfully.`)
+    req.flash('success', `${course.name} has been created successfully.`);
     res.status(201).redirect('/courses');
   } catch (error) {
-    req.flash('error', 'Something happened!')
+    req.flash('error', 'Something happened!');
     res.status(400).redirect('/courses');
   }
 };
@@ -72,7 +72,7 @@ exports.getCourse = async (req, res) => {
     const categories = await Category.find();
 
     const day = course.createdAt.getDate();
-    const month = course.createdAt.getMonth()+1;
+    const month = course.createdAt.getMonth() + 1;
     const year = course.createdAt.getFullYear();
     const date = day + '/' + month + '/' + year;
 
@@ -112,6 +112,19 @@ exports.releaseCourse = async (req, res) => {
     await user.courses.pull({ _id: req.body.course_id });
     await user.save();
 
+    res.status(200).redirect('/users/dashboard');
+  } catch (error) {
+    res.status(400).json({
+      status: 'fail',
+      error,
+    });
+  }
+};
+
+exports.deleteCourse = async (req, res) => {
+  try {
+    const course = await Course.findOneAndRemove({ slug: req.params.slug });
+    req.flash('error', `${course.name} has been removed successfully`);
     res.status(200).redirect('/users/dashboard');
   } catch (error) {
     res.status(400).json({
